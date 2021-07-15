@@ -192,3 +192,8 @@ const updateTime = () => {
 
 setInterval(updateTime, 1000);
 updateTime();
+
+
+function zoom() {
+  document.body.style.zoom = "80%" 
+}
