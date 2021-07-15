@@ -90,10 +90,28 @@ const handleOperatorClick = (operation) =>{
 
 
     }
+    const valueNumInMemory = parseFloat(valueStrInMemory);
     let newValueNum;
     if(operatorInMemory === 'addition'){
-        newValueNum =
+        newValueNum = valueNumInMemory + currentValueNum;
+    }else if (operatorInMemory === 'subtraction'){
+        newValueNum = valueNumInMemory - currentValueNum;
+
+    }else if (operatorInMemory === 'multiplication'){
+        newValueNum = valueNumInMemory * currentValueNum;
+
+
+    }else if (operatorInMemory === 'division'){
+        newValueNum = valueNumInMemory / currentValueNum;
+
+
     }
+
+    valueStrInMemory = newValueNum.toString();
+    operatorInMemory = operation;
+    setStrAsValue('0');
+
+
 
 
 
@@ -107,6 +125,9 @@ const handleOperatorClick = (operation) =>{
 
 acEl.addEventListener('click',() => {
     setStrAsValue('0');
+    valueStrInMemory = null;
+    operatorInMemory = null;
+
 
 });
 pmEl.addEventListener('click', () => {
@@ -130,6 +151,8 @@ percentEl.addEventListener('click',() => {
     const currentValueNum = getValueAsNum();
     const newValueNum = currentValueNum / 100;
     setStrAsValue(newValueNum.toString());
+    valueStrInMemory = null;
+    operatorInMemory = null;
 
 });
 
@@ -153,6 +176,11 @@ divisionEl.addEventListener('click',() =>{
 
 });
 equalEl.addEventListener('click',() =>{
+    if(!valueStrInMemory) {
+        
+
+    }
+
 
 });
 
