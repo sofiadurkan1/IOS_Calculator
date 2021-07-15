@@ -20,11 +20,11 @@ body {
 .calculator {
   position: relative;
   background: black;
-  width: 563px;
-  height: 1000px;
+  width: 100%;
+  height: 200%;
   border-radius: 50px;
   padding: 20px;
-  width: 563px;
+  /* width: 563px; */
   color: white;
 }
 .top-container {
